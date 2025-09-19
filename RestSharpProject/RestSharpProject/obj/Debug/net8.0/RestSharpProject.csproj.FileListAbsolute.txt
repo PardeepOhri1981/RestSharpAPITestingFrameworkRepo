@@ -1,0 +1,12 @@
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\bin\Debug\net8.0\RestSharpProject.deps.json
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\bin\Debug\net8.0\RestSharpProject.dll
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\bin\Debug\net8.0\RestSharpProject.pdb
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.csproj.AssemblyReference.cache
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.AssemblyInfoInputs.cache
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.AssemblyInfo.cs
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.csproj.CoreCompileInputs.cache
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.dll
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\refint\RestSharpProject.dll
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.pdb
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\ref\RestSharpProject.dll
