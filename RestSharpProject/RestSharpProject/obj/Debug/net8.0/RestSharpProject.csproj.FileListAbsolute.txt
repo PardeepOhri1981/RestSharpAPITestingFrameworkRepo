@@ -10,3 +10,4 @@ D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSh
 D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\refint\RestSharpProject.dll
 D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.pdb
 D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\ref\RestSharpProject.dll
+D:\RestSharpAPITesting\RestSharpProject\RestSharpProject\obj\Debug\net8.0\RestSharpProject.sourcelink.json

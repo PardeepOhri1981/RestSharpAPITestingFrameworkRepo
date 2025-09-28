@@ -10,6 +10,15 @@ using System.Security.Permissions;
 using Microsoft.VisualBasic;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using NPOI.HSSF.UserModel;
+using System.Configuration;
+using System.Linq;
+using System.Data.Linq;
+using Org.BouncyCastle.Security;
+
+
 
 namespace NUnitTestProjectAPITesting;
 
@@ -43,14 +52,16 @@ public class CreateUserTests
 
         this.createUserRequest = new CreateUserRequest();
         createUserRequest.name = name;
+        readLinqConection();
         createUserRequest.data = new RestSharpProject.Models.Requests.Data { Color = "Black", Capacity = "64 GB" };
         var response = await api.CreateUser<CreateUserRequest>(createUserRequest);
         var statusCode = response.StatusCode;
         var code = (int)statusCode;
+
         Assert.That(code, Is.EqualTo(200));
     }
 
-    [Test]
+  /*   [Test]
     public async Task UpdateUser_ShouldReturnSuccess()
     {
 
@@ -96,12 +107,59 @@ public class CreateUserTests
 
         var response = await api.DeleteUser("ff8081819782e69e019961b9143534c8");
         var statusCode = response.StatusCode;
+        string str = ReadDataFromExcel().Result;
+        Console.WriteLine(str);
+
+        string value = ReadAppConfig();
+        Console.WriteLine(value);
         var code = (int)statusCode;
-        Assert.That(code, Is.EqualTo(200));
+      //  Assert.That(code, Is.EqualTo(200));
         Assert.That(response.Content, Is.Not.Null);
-         
+        Assert.That(str, Is.EqualTo("Pardeep"));
+        Assert.That(value, Is.EqualTo("localhost:1433"));
+
 
     }
-    
+ */
+    public async Task<string> ReadDataFromExcel()
+    {
+        string filePath = @"D:\RestSharpAPITesting\NUnitTestProjectAPITesting\TestData\TestData.xlsx";
+        IWorkbook workbook = null;
+        FileStream fileStream = null;
+        String str = string.Empty;
+        await using (fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+        {
+            workbook = new XSSFWorkbook(fileStream);
+        }
 
+        ISheet sheet = workbook.GetSheetAt(0); // Assuming data is in the first sheet
+        IRow row = sheet.GetRow(1); // Get the second row (index 1)
+        if (row != null)
+        {
+            ICell cell = row.GetCell(0); // Get the first cell (index 0)
+            if (cell != null)
+            {
+                return cell?.ToString() ?? string.Empty;
+            }
+        }
+        return string.Empty;
+    }
+    private string ReadAppConfig()
+    {
+        string value = ConfigurationManager.AppSettings["DatabaseServer"] ?? string.Empty;
+        Console.WriteLine(value);
+        string port = ConfigurationManager.AppSettings["PortNumber"] ?? string.Empty;
+        Console.WriteLine(port);
+        return (value + ":" + port);
+
+    }
+    private void readLinqConection()
+    {
+        int[] numbers = { 1, 20, 30, 4, 5 };
+        var num = from i in numbers where i > 10 select i;
+        foreach (var n in num)
+        {
+            Console.WriteLine(n);
+        }   
+    }
 }

@@ -2,6 +2,8 @@
 using RestSharp;
 using RestSharpProject.Auth;
 using Newtonsoft.Json;
+
+
 namespace RestSharpProject
 {
     public class APIClient : IAPIClient , IDisposable
@@ -11,6 +13,7 @@ namespace RestSharpProject
          readonly string? clientId;
         readonly string? clientSecret;
         private readonly string baseUrl;    
+
         public void Dispose()
         {
             _client?.Dispose();
@@ -18,17 +21,18 @@ namespace RestSharpProject
             // Dispose of unmanaged resources if any
         }   
 
- /*        public APIClient(string baseUrl, string clientId, string clientSecret)
+       public APIClient(string baseUrl, string clientId, string clientSecret)
         {
             this.baseUrl = baseUrl ?? throw new ArgumentNullException(nameof(baseUrl));
             this.clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));  
             this.clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             var options = new RestClientOptions(baseUrl)
             {
-                Authenticator = new APIAuthenticator(baseUrl, clientId, clientSecret)
+                Authenticator = new APIAuthenticator(baseUrl, clientId, clientSecret),
+    
             };
             _client = new RestClient(options);
-        } */
+        }
          public APIClient(string baseUrl)
         {
             this.baseUrl = baseUrl ?? throw new ArgumentNullException(nameof(baseUrl));
